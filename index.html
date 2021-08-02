@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" async defer></script>
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="head">
+        <div id="header">
+          <h1 id="logo">TRIAL</h1>
+        </div>
+        <div id="page-information">
+          <h3 id="page-information-first">Link</h3>
+          <h3 id="page-information-second">VOTE</h3>
+          <h3 id="page-information-three">Challange</h3>
+        </div>
+      </div>
+      <div id="main">
+        <!-- ekleme alanı-->
+        <div id="add-new-link-page">
+          <h3 id="new-link-head">Add New Link</h3>
+          <h3 id="update-link-head">Update Link</h3>
+          <p>Link Name:</p>
+          <input
+            type="text"
+            id="link-name-input-area"
+            placeholder="e.g. Alphabet"
+            onkeyup="onInputKeyup(event)"
+          />
+          <p>Link Url:</p>
+          <input
+            type="text"
+            id="link-url-input-area"
+            placeholder="e.g. http://abc.xyz"
+            onkeyup="onInputKeyup(event)"
+          /><br />
+          <br />
+          <button
+            id="new-link-page-add-button"
+            class="button add-button"
+            onclick="addButtonClicked()"
+          >
+            ADD
+          </button>
+          <button
+            id="new-link-page-edit-button"
+            class="button update-button"
+            onclick="updateButtonClicked()"
+          >
+            UPDATE
+          </button>
+        </div>
+        <!-- ekleme alanı-->
+        <div id="content">
+          <ul id="list">
+            <li id="list-item">
+              <div id="list-item-div">
+                <div id="add-button">
+                  <div id="box" onclick="openAdditionSection()">
+                    <p id="plus">+</p>
+                  </div>
+                </div>
+                <div id="list-item-content">
+                  <div id="list-item-content-header"></div>
+                  <div id="list-item-content-middle">
+                    <p id="submit">SUBMIT A LINK</p>
+                  </div>
+                  <div id="list-item-content-footer"></div>
+                </div>
+              </div>
+            </li>
+            <div id="side-bar"></div>
+          </ul>
+
+          <ul id="content-list" class="list"></ul>
+          <ul id="pagination-list" class="pagination-list">
+            <li id="decrement-icon"><</li>
+            <li id="increment-icon">></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="popup-bg">
+      <div id="popup" onclick="popupDivClicked(event)">
+        <div id="popupHeader"><h2>Remove Link</h2></div>
+        <div id="popupContent">
+          <p>Do you want to remove:</p>
+          <p class="deletePopupInHeader"></p>
+        </div>
+        <div id="popupFooter">
+          <button class="button" onclick="deleteConfirm()">OK</button>
+          <button class="button button2" onclick="closePopup()">CANCEL</button>
+        </div>
+      </div>
+    </div>
+    <div id="category-deleted-popup" onclick="openCategoryDeletedPopup()">
+      <div id="category-deleted-popup-paragraph">
+        <p>successfully deleted</p>
+      </div>
+    </div>
+  </body>
+</html>
